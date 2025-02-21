@@ -33,9 +33,9 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Deploy to Kubernetes') {
             steps {
-                sh 'echo "Deploying mock application..."'
+                sh 'kubectl apply -f k8s-deployment.yaml'
             }
         }
     }
